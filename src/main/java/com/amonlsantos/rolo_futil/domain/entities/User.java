@@ -1,11 +1,15 @@
 package com.amonlsantos.rolo_futil.domain.entities;
+
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Set;
+
 import java.util.UUID;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
