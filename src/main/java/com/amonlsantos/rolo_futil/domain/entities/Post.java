@@ -1,5 +1,6 @@
 
 package com.amonlsantos.rolo_futil.domain.entities;
+
 import com.amonlsantos.rolo_futil.domain.PostStatus;
 import jakarta.persistence.*;
 import lombok.*;
@@ -8,6 +9,7 @@ import java.sql.Blob;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,9 +28,17 @@ public class Post {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String content;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "author_id", nullable = false)
+    private User author;
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private PostStatus status;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
