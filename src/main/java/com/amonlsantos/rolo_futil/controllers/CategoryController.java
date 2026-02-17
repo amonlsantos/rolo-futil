@@ -1,6 +1,8 @@
 package com.amonlsantos.rolo_futil.controllers;
 
 import com.amonlsantos.rolo_futil.domain.dtos.CategoryDto;
+import com.amonlsantos.rolo_futil.domain.entities.Category;
+import com.amonlsantos.rolo_futil.mappers.CategoryMapper;
 import com.amonlsantos.rolo_futil.services.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +15,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CategoryController {
     private final CategoryService categoryService;
-
+    private final CategoryMapper categoryMapper;
     @GetMapping
     public ResponseEntity<List<CategoryDto>> listCategories() {
-        //TODO
+        List<Category> categories = categoryService.listCategories();
+        return ResponseEntity.ok(
+                categories.stream().map(categoryMapper::toDto).toList()
+        );
     }
 }
