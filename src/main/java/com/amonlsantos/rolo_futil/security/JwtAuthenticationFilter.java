@@ -36,7 +36,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
         } catch (Exception e) {
             // do nothing jus quit authentication
-            log.warn("Invailid Token");
+            log.warn("Invalid Token");
         }
 
         filterChain.doFilter(request, response);
