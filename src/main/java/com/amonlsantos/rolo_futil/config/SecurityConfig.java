@@ -1,5 +1,6 @@
 package com.amonlsantos.rolo_futil.config;
 
+import com.amonlsantos.rolo_futil.domain.entities.User;
 import com.amonlsantos.rolo_futil.repositories.UserRepository;
 import com.amonlsantos.rolo_futil.security.BlogUserDetailsService;
 import com.amonlsantos.rolo_futil.security.JwtAuthenticationFilter;
@@ -38,14 +39,25 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService(UserRepository userRepository) {
-        return new BlogUserDetailsService(userRepository);
+        BlogUserDetailsService blogUserDetailsService = new BlogUserDetailsService(userRepository);
+        String email = "user@test.com";
+
+        userRepository.findByEmail(email).orElseGet(() -> {
+            User newUser = User.builder()
+                    .name("test user")
+                    .email(email)
+                    .password(passwordEncoder().encode("password"))
+                    .build();
+            return userRepository.save(newUser);
+        });
+        return blogUserDetailsService;
     }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthenticationFilter jwtAuthenticationFilter) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/api/v1/auth").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/v1/auth/login").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/v1/posts/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/v1/categories/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/v1/tags/**").permitAll()
