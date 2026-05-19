@@ -1,0 +1,141 @@
+@import 'skeleton-css/css/skeleton.css';
+@import 'skeleton-css/css/normalize.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  --color: #8c76f9;
+  --color-body: #c2c0ce;
+  --color-heading: #d3d1db;
+  --color-display: #e3e2e9;
+  --bg-primary: #0e0d11;
+  --bg-secondary: #1c1b22;
+  --bg-tertiary: #383645;
+
+  background-color: var(--bg-primary);
+  color: var(--color-body);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--color-body);
+}
+
+a {
+  color: var(--color);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+}
+
+.navbar {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--bg-tertiary);
+  padding: 1rem 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .brand {
+  color: var(--color-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--color-body);
+  font-size: 1.4rem;
+}
+
+.nav-links a.active {
+  color: var(--color);
+}
+
+.nav-links a:hover {
+  color: var(--color-display);
+}
+
+button, .button, input[type="submit"], input[type="button"] {
+  background-color: var(--color);
+  border-color: var(--color);
+  color: #fff;
+}
+
+button:hover, .button:hover, input[type="submit"]:hover {
+  opacity: 0.85;
+}
+
+.button-primary {
+  background-color: var(--color);
+  border-color: var(--color);
+}
+
+input, textarea, select {
+  background-color: var(--bg-secondary);
+  border-color: var(--bg-tertiary);
+  color: var(--color-body);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color);
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 4px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.text-center { text-align: center; }
+
+.empty-text {
+  text-align: center;
+  color: #999;
+  padding: 3rem 0;
+}
+
+.error-text {
+  color: #d32f2f;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.flex-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.button-danger {
+  background-color: #d32f2f;
+  border-color: #d32f2f;
+  color: #fff;
+}
+
+.button-danger:hover {
+  background-color: #b71c1c;
+  border-color: #b71c1c;
+}
+
+.section {
+  margin-top: 3rem;
+}
