@@ -11,7 +11,7 @@ import { UserRole } from './shared/models/user-role.enum';
   template: `
     <div class="navbar">
       <div class="container">
-        <a class="brand" routerLink="/">Rolo Futil</a>
+        <a class="brand" routerLink="/">rolo futil</a>
         <div class="nav-links">
           <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
           <ng-container *ngIf="auth.isAuthenticated(); else guest">
@@ -30,7 +30,7 @@ import { UserRole } from './shared/models/user-role.enum';
     <div class="container section">
       <router-outlet />
     </div>
-  `
+  `,
 })
 export class App {
   protected readonly writerRoles = [UserRole.WRITER, UserRole.EDITOR, UserRole.ADMIN];

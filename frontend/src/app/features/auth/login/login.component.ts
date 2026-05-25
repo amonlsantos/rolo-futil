@@ -23,7 +23,9 @@ import { NgIf } from '@angular/common';
             <input id="password" name="password" type="password" class="u-full-width" [(ngModel)]="request.password" required placeholder="password">
           </div>
           <p *ngIf="error" class="error-text">{{ error }}</p>
-          <input type="submit" class="button-primary u-full-width" value="Login" [disabled]="loading">
+          <div class="row">
+            <input type="submit" class="button-primary u-full-width" value="Login" [disabled]="loading">
+          </div>
         </form>
       </div>
     </div>

@@ -11,7 +11,7 @@ import { Post } from '../../../shared/models/post.model';
   template: `
     <div class="row text-center hero-section">
       <div class="twelve columns">
-        <h1>Rolo Futil</h1>
+        <img src="/logo.svg" alt="rolo futil" class="hero-logo">
         <p class="hero-subtitle">Nada mais fútil que um rolo de filme.</p>
       </div>
     </div>
@@ -28,6 +28,7 @@ import { Post } from '../../../shared/models/post.model';
     .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
     .hero-section { margin-bottom: 2rem; }
     .hero-subtitle { color: #666; }
+    .hero-logo { height: 120px; margin-bottom: 1rem; }
   `]
 })
 export class HomeComponent implements OnInit {

@@ -6,7 +6,7 @@
 }
 
 html {
-  --color: #8c76f9;
+  --color: #;
   --color-body: #c2c0ce;
   --color-heading: #d3d1db;
   --color-display: #e3e2e9;
@@ -21,6 +21,7 @@ html {
 body {
   background-color: var(--bg-primary);
   color: var(--color-body);
+  font-family: "Roboto Mono", monospace;
 }
 
 a {
@@ -73,19 +74,23 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-display);
 }
 
-button, .button, input[type="submit"], input[type="button"] {
+.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="button"].button-primary {
   background-color: var(--color);
   border-color: var(--color);
   color: #fff;
 }
 
-button:hover, .button:hover, input[type="submit"]:hover {
-  opacity: 0.85;
-}
-
-.button-primary {
-  background-color: var(--color);
-  border-color: var(--color);
+.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button:hover {
+  background-color: #6b52e8;
+  border-color: #6b52e8;
+  color: #fff;
 }
 
 input, textarea, select {

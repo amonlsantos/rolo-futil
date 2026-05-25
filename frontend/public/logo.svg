@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="900"
+     viewBox="0 0 1600 1200">
+  <!-- Fundo -->
+  <rect width="1600" height="1200" fill="#0e0d11"/>
+  <!-- Barras do filme -->
+  <rect x="0" y="0" width="1600" height="120" fill="#8c76f9"/>
+  <rect x="0" y="1080" width="1600" height="120" fill="#8c76f9"/>
+  <!-- Área interna 4:3 -->
+  <rect x="260" y="180"
+        width="1080"
+        height="810"
+        fill="#0e0d11"/>
+  <!-- Texto central -->
+  <text x="800" y="600"
+        font-family="'Roboto Mono', monospace"
+        font-size="200"
+        font-weight="700"
+        fill="#d3d1db"
+        text-anchor="middle"
+        dominant-baseline="central"
+        letter-spacing="8">rolo futil</text>
+  <!-- Furos superiores centralizados -->
+  <g fill="#0e0d11">
+    <rect x="90"  y="30" width="55" height="70" rx="4"/>
+    <rect x="240" y="30" width="55" height="70" rx="4"/>
+    <rect x="390" y="30" width="55" height="70" rx="4"/>
+    <rect x="540" y="30" width="55" height="70" rx="4"/>
+    <rect x="690" y="30" width="55" height="70" rx="4"/>
+    <rect x="840" y="30" width="55" height="70" rx="4"/>
+    <rect x="990" y="30" width="55" height="70" rx="4"/>
+    <rect x="1140" y="30" width="55" height="70" rx="4"/>
+    <rect x="1290" y="30" width="55" height="70" rx="4"/>
+    <rect x="1440" y="30" width="55" height="70" rx="4"/>
+  </g>
+  <!-- Furos inferiores centralizados -->
+  <g fill="#0e0d11">
+    <rect x="90"  y="1115" width="55" height="70" rx="4"/>
+    <rect x="240" y="1115" width="55" height="70" rx="4"/>
+    <rect x="390" y="1115" width="55" height="70" rx="4"/>
+    <rect x="540" y="1115" width="55" height="70" rx="4"/>
+    <rect x="690" y="1115" width="55" height="70" rx="4"/>
+    <rect x="840" y="1115" width="55" height="70" rx="4"/>
+    <rect x="990" y="1115" width="55" height="70" rx="4"/>
+    <rect x="1140" y="1115" width="55" height="70" rx="4"/>
+    <rect x="1290" y="1115" width="55" height="70" rx="4"/>
+    <rect x="1440" y="1115" width="55" height="70" rx="4"/>
+  </g>
+</svg>
