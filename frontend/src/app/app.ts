@@ -22,6 +22,7 @@ import { UserRole } from './shared/models/user-role.enum';
           </ng-container>
           <ng-template #guest>
             <a routerLink="/login" routerLinkActive="active">Login</a>
+            <a routerLink="/register" routerLinkActive="active">Criar conta</a>
           </ng-template>
         </div>
       </div>

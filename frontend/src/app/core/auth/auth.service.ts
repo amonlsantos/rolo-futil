@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { jwtDecode } from 'jwt-decode';
 import { environment } from '../../../environments/environment';
-import { AuthResponse, LoginRequest, UserRoleAssignment } from '../../shared/models/user.model';
+import { AuthResponse, LoginRequest, RegisterRequest, UserRoleAssignment } from '../../shared/models/user.model';
 import { UserRole } from '../../shared/models/user-role.enum';
 import { Permission } from '../../shared/models/permission.enum';
 
@@ -25,6 +25,12 @@ export class AuthService {
 
   login(request: LoginRequest): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`, request).pipe(
+      tap(res => this.saveSession(res))
+    );
+  }
+
+  register(request: RegisterRequest): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(`${this.apiUrl}/register`, request).pipe(
       tap(res => this.saveSession(res))
     );
   }
